@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Stonks</string>
+    <string name="try_again">Try Again!</string>
+    <string name="stonk_list_empty_text">Where all the Stonks be at?</string>
+    <string name="generic_error_text">Aw snap! Something went awry while snagging your Stonks!</string>
+    <string name="malformed_json_text">The JSON response wasn\'t formatted correctly!</string>
+    <string name="list_fab_refresh">Refresh</string>
+    <string name="stonk_item_shares">Shares</string>
+    <string name="stonk_item_value">Value</string>
+    <string name="stonk_item_last_updated">Last updated</string>
+    <string name="stonk_list_empty_text_instruction">Slap that refresh button to give it another go!</string>
+    <string name="ok">OK!</string>
+</resources>

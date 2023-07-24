@@ -179,6 +179,9 @@ private fun StonkList(
                     .fillMaxSize(),
                 verticalArrangement = spacedBy(dimensionResource(id = R.dimen.padding_default_quarter))
             ) {
+                item {
+                    Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_default)))
+                }
                 items(stonks.size) { index ->
                     StonkListItem(stonk = stonks[index])
                 }

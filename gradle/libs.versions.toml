@@ -1,9 +1,11 @@
 [versions]
 kotlinVersion = "1.8.21"
 androidGradleVersion = "8.0.2"
-kspVersion = "1.8.21-1.0.11"
 androidXCoreVersion = "1.10.1"
 lifecycleVersion = "2.6.1"
+
+detektVersion = "1.23.0"
+spotlessVersion = "6.16.0"
 
 koinVersion = "3.4.1"
 ktorVersion = "2.1.2"
@@ -58,16 +60,20 @@ junit = { module = "junit:junit", version.ref = "junitVersion" }
 turbine = { module = "app.cash.turbine:turbine", version.ref = "turbineVersion" }
 ktor-client-mock = { module = "io.ktor:ktor-client-mock", version.ref = "ktorVersion" }
 
-
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradleVersion" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlinVersion" }
+spotless-gradlePlugin = { group = "com.diffplug.spotless", name = "spotless-plugin-gradle", version.ref = "spotlessVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradleVersion" }
 android-library = { id = "com.android.library", version.ref = "androidGradleVersion" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinVersion" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinVersion" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotlessVersion" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detektVersion" }
 
 [bundles]
-appUI = [
+composeUI = [
     "androidx-composeUi",
     "androidx-composeUiTooling",
     "androidx-composeUiToolingPreview",
@@ -90,6 +96,10 @@ ktorNetworking = [
 koinDI = [
     "koin-android",
     "koin-androidx-compose",
+]
+testRule = [
+    "junit",
+    "coroutines-test",
 ]
 test = [
     "mockk",

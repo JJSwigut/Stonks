@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     id("stonks.android.application")
     id("stonks.android.application.compose")
-    id("stonks.spotless")
+    id("stonks.quality")
 }
 
 android {

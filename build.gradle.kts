@@ -6,13 +6,3 @@ plugins {
     alias(libs.plugins.spotless)
     alias(libs.plugins.detekt)
 }
-
-detekt {
-    config = files("config/detekt/detekt.yml")
-    buildUponDefaultConfig = true
-    reports {
-        html.enabled = true
-        xml.enabled = false
-        txt.enabled = false
-    }
-}

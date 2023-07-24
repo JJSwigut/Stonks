@@ -224,12 +224,12 @@ private fun RefreshFAB(
 
 @Preview
 @Composable
-private fun RefreshFABPreviewExtended() {
+private fun RefreshFABExtendedPreview() {
     RefreshFAB(extended = true, onClick = {})
 }
 
 @Preview
 @Composable
-private fun RefreshFABPreviewCondensed() {
+private fun RefreshFABCondensedPreview() {
     RefreshFAB(extended = false, onClick = {})
 }

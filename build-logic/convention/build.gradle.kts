@@ -13,6 +13,7 @@ dependencies {
     compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.spotless.gradlePlugin)
+    compileOnly(libs.detekt.gradlePlugin)
 }
 
 gradlePlugin {
@@ -25,9 +26,9 @@ gradlePlugin {
             id = "stonks.android.application"
             implementationClass = "AndroidApplicationConventionPlugin"
         }
-        register("spotless") {
-            id = "stonks.spotless"
-            implementationClass = "SpotlessConventionPlugin"
+        register("quality") {
+            id = "stonks.quality"
+            implementationClass = "QualityConventionPlugin"
         }
     }
 }

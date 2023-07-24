@@ -17,7 +17,7 @@ class CoroutineTestRule(
 
     override fun starting(description: Description) {
         super.starting(description)
-        Dispatchers.setMain(dispatcher.testDispatcher)
+        Dispatchers.setMain(dispatcher.dispatcher)
     }
 
     override fun finished(description: Description) {

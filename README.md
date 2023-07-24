@@ -6,7 +6,7 @@ Stonks is a simple, yet effective Android application that provides users with a
 
 The application leverages several popular libraries and tools in the Android ecosystem:
 
-- **Koin**: A pragmatic lightweight dependency injection framework for Kotlin. It's used for managing app modules and providing dependencies, which helps in keeping the code clean and the components loosely coupled.
+- **Koin**: A pragmatic lightweight dependency injection framework for Kotlin. It's used for managing app modules and providing dependencies, which helps in keeping the code clean and the components loosely coupled. While Koin offers simplicity and speed of setup, it does trade off compile-time safety which frameworks like Dagger provide. This means that dependency issues might not be caught until runtime. For me though, the ease of use and reduced boilerplate code often make Koin a preferred choice for smaller projects or projects with less complex dependency graphs.
 
 - **Ktor**: A modern multiplatform asynchronous HTTP client used for implementing the network layer and making API calls. It uses suspend functions for asynchronous API calls, which simplifies the async logic.
 
@@ -28,8 +28,8 @@ The UI components are built using Jetpack Compose and are kept reactive with sta
 
 ## Screenshots
 
-| Stonk List Content | Error Dialog | Empty Content |
-| --- | --- | --- |
+| Stonk List Content                                                                                          | Error Dialog                                                                                                | Empty Content                                                                                               |
+|-------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
 | <img src=https://github.com/JJSwigut/Stonks/assets/62301576/326f9046-b2e3-4cd7-9746-52f5d04e3c21 width=350> | <img src=https://github.com/JJSwigut/Stonks/assets/62301576/2ca37d16-8546-42f7-b8cc-0de464cbe960 width=350> | <img src=https://github.com/JJSwigut/Stonks/assets/62301576/81484f4e-262e-46ca-911a-aa13533c49e1 width=350> |
 
 ## Tradeoffs

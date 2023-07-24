@@ -12,10 +12,6 @@ ktorVersion = "2.1.2"
 
 mockkVersion = "1.13.5"
 
-minSdk = "28"
-targetSdk = "33"
-compileSdk = "33"
-
 composeCompilerVersion = "1.4.7"
 composeBomVersion = "2023.05.01"
 composeActivityVersion= "1.7.1"
@@ -41,7 +37,6 @@ androidx-lifecycleViewmodel = { group = "androidx.lifecycle", name = "lifecycle-
 androidx-lifecycleRuntime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleVersion" }
 
 google-composeMaterial3 = { group = "androidx.compose.material3", name = "material3", version.ref = "composeMaterial3Version" }
-
 google-accompanistSystemUiController = { group = "com.google.accompanist", name = "accompanist-systemuicontroller", version.ref = "accompanistVersion" }
 
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutinesVersion" }
@@ -73,6 +68,11 @@ spotless = { id = "com.diffplug.spotless", version.ref = "spotlessVersion" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detektVersion" }
 
 [bundles]
+androidX = [
+    "androidx-core",
+    "androidx-lifecycleViewmodel",
+    "androidx-lifecycleRuntime",
+]
 composeUI = [
     "androidx-composeUi",
     "androidx-composeUiTooling",
@@ -81,11 +81,6 @@ composeUI = [
     "androidx-composeActivity",
     "google-composeMaterial3",
     "google-accompanistSystemUiController",
-]
-androidX = [
-    "androidx-core",
-    "androidx-lifecycleViewmodel",
-    "androidx-lifecycleRuntime",
 ]
 ktorNetworking = [
     "ktor-client-core",

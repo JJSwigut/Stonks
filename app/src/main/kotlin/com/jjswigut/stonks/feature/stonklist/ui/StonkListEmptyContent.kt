@@ -9,11 +9,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import com.jjswigut.stonks.R
 import com.jjswigut.stonks.R.dimen
 import com.jjswigut.stonks.ui.theme.SubtitleText
 import com.jjswigut.stonks.ui.theme.TitleText
 
+@Preview
 @Composable
 fun StonkListEmptyContent(
     modifier: Modifier = Modifier

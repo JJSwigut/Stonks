@@ -40,6 +40,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.window.Dialog
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.jjswigut.stonks.R
@@ -109,7 +110,7 @@ fun StonkListScreen(
                 }
             },
             floatingActionButton = {
-                RefreshFloatingActionButton(
+                RefreshFAB(
                     extended = listState.isScrollingUp(),
                     onClick = { viewModel.setAction(RefreshStonks) }
                 )
@@ -182,7 +183,7 @@ private fun StonkList(
                     StonkListItem(stonk = stonks[index])
                 }
                 item {
-                    Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_default)))
+                    Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.stonk_list_footer_spacing)))
                 }
             }
         }
@@ -190,7 +191,7 @@ private fun StonkList(
 }
 
 @Composable
-private fun RefreshFloatingActionButton(
+private fun RefreshFAB(
     extended: Boolean,
     onClick: () -> Unit
 ) {
@@ -216,4 +217,16 @@ private fun RefreshFloatingActionButton(
             }
         }
     }
+}
+
+@Preview
+@Composable
+private fun RefreshFABPreviewExtended() {
+    RefreshFAB(extended = true, onClick = {})
+}
+
+@Preview
+@Composable
+private fun RefreshFABPreviewCondensed() {
+    RefreshFAB(extended = false, onClick = {})
 }

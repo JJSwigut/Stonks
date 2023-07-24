@@ -10,5 +10,8 @@
     <string name="stonk_item_last_updated">Last updated</string>
     <string name="stonk_list_empty_text_instruction">Slap that refresh button to give it another go!</string>
     <string name="ok">OK!</string>
-    <string name="share_amount">%s shares</string>
+    <plurals name="share_amount">
+        <item quantity="one">%s share</item>
+        <item quantity="other">%s shares</item>
+    </plurals>
 </resources>

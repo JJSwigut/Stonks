@@ -5,6 +5,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 
 @Composable
@@ -57,7 +58,8 @@ fun NameText(
         text = text,
         color = MaterialTheme.colorScheme.onSurface,
         style = MaterialTheme.typography.bodyMedium,
-        overflow = TextOverflow.Ellipsis
+        overflow = TextOverflow.Ellipsis,
+        maxLines = 1
     )
 }
 
@@ -77,13 +79,15 @@ fun SubtitleText(
 @Composable
 fun ValueText(
     modifier: Modifier = Modifier,
-    text: String
+    text: String,
+    textAlign: TextAlign = TextAlign.Start
 ) {
     Text(
         modifier = modifier,
         text = text,
         color = MaterialTheme.colorScheme.onSurface,
-        style = MaterialTheme.typography.bodyMedium
+        style = MaterialTheme.typography.bodyMedium,
+        textAlign = textAlign
     )
 }
 

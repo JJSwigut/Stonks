@@ -6,4 +6,5 @@
     <dimen name="dialog_elevation">50dp</dimen>
     <dimen name="dialog_height">100dp</dimen>
     <dimen name="button_height">48dp</dimen>
+    <dimen name="stonk_list_footer_spacing">80dp</dimen>
 </resources>

@@ -28,7 +28,9 @@ The UI components are built using Jetpack Compose and are kept reactive with sta
 
 ## Screenshots
 
-
+| Stonk List Content | Error Dialog | Empty Content |
+| --- | --- | --- |
+| <img src=https://github.com/JJSwigut/Stonks/assets/62301576/326f9046-b2e3-4cd7-9746-52f5d04e3c21 width=350> | <img src=https://github.com/JJSwigut/Stonks/assets/62301576/2ca37d16-8546-42f7-b8cc-0de464cbe960 width=350> | <img src=https://github.com/JJSwigut/Stonks/assets/62301576/81484f4e-262e-46ca-911a-aa13533c49e1 width=350> |
 
 ## Tradeoffs
 

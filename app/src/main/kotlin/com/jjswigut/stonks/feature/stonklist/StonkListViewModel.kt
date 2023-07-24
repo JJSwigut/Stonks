@@ -1,5 +1,6 @@
 package com.jjswigut.stonks.feature.stonklist
 
+import androidx.compose.runtime.Stable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jjswigut.stonks.data.models.Stonk
@@ -73,6 +74,7 @@ class StonkListViewModel(
         }
     }
 
+    @Stable
     data class StonkListViewState(
         val isLoading: Boolean = true,
         val stonks: List<Stonk> = emptyList()

@@ -57,3 +57,5 @@ This project was a great opportunity to explore and implement modern Android dev
 - **Accessibility**: Ensure the app is accessible to all users by following best practices for accessibility.
 
 - **Localization**: Add support for multiple languages to reach a wider audience.
+
+- **Compose-Metrics**: Make optimizations based on the metrics provided by the Compose compiler.

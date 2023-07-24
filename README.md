@@ -1,35 +1,57 @@
 # Stonks
 
-This is a simple stonks app that displays a list of stonks and their current prices.
+Stonks is a simple, yet effective Android application that provides users with a list of stocks and their current prices. The application is built with a focus on modern Android development practices and libraries.
+
 ## Libraries Used
-Koin - For dependency injection and managing app modules
-Ktor - For implementing the network layer and API calls
-Jetpack Compose - Modern toolkit for building native UI
+
+The application leverages several popular libraries and tools in the Android ecosystem:
+
+- **Koin**: A pragmatic lightweight dependency injection framework for Kotlin. It's used for managing app modules and providing dependencies, which helps in keeping the code clean and the components loosely coupled.
+
+- **Ktor**: A modern multiplatform asynchronous HTTP client used for implementing the network layer and making API calls. It uses suspend functions for asynchronous API calls, which simplifies the async logic.
+
+- **Jetpack Compose**: A modern toolkit for building native UI. It's used to build the UI components of the app in a declarative way, which improves the readability and maintainability of the UI code.
+
+- **Spotless**: A code formatting tool that integrates with ktlint to ensure that the code follows the same style guidelines, which improves the readability and maintainability of the code.
+
+- **Detekt**: A static code analysis tool for Kotlin that helps to detect potential issues in the code, such as code smells, bugs, and deviations from the coding standards.
 
 ## Architecture
-The app is built using MVVM architecture with separation of concerns in mind. 
-ViewModels handle the presentation logic and Flows are used to update the UI declaratively.
 
-Dependencies are injected using Koin to keep classes loosely coupled. 
-I'm actually more familiar with Dagger/Hilt but I got to like using Koin for it's simplicity and speed of set-up
-in some KMP side projects I've been working on.
+The application is built using the Model-View-ViewModel (MVVM) architecture, which promotes a clear separation of concerns and an easier testing strategy. The ViewModels handle the presentation logic, while Flows are used to update the UI in a declarative and reactive way.
 
-Ktor implements the networking using suspend functions for async API calls. Coroutines are used to simplify async logic.
-I'm also a big fan of Retrofit because it's more full-featured for REST APIs but I chose Ktor since it's lightweight,
-kotlin-centric, and made sense for the size and scope of the project. 
+The dependencies are injected using Koin, which allows for a more flexible and less boilerplate code than traditional dependency injection frameworks. While I have more experience with Dagger/Hilt, I've found Koin to be simpler and quicker to set up.
 
-Jetpack Compose UI components are kept reactive with state hoisting. This avoids passing callbacks down and improves composability.
+The networking layer is implemented using Ktor, which provides a lightweight, Kotlin-centric approach to making asynchronous API calls. While Retrofit might be more full-featured for REST APIs, Ktor was chosen for its simplicity and suitability for the size and scope of this project.
+
+The UI components are built using Jetpack Compose and are kept reactive with state hoisting. This approach avoids passing callbacks down the component tree and improves the composability and reusability of the components.
+
 ## Screenshots
 
-Some key architectural decisions:
+
 
 ## Tradeoffs
- - I definitely would have modularized a real app, but didn't want to spend the extra set up time.
- - Error handling is pretty minimal, which would normally deserve more time.
- - I deleted the proguard rules for the sake of time, but would normally keep them.
- - I would also spend the extra time to migrate to Convention Gradle plugins for Kotlin DSL to clean up all those esoteric gradle files.
+
+- **Modularization**: While modularization would be beneficial in a larger, real-world application to improve build times and enforce separation of concerns, it was not implemented in this project to save on initial setup time.
+
+- **Error Handling**: The error handling in the current version of the app is minimal. In a production app, a more robust error handling strategy would be implemented.
+
+- **Proguard Rules**: The Proguard rules were removed for the sake of time. However, in a production app, they would be included to reduce the APK size and obfuscate the code.
+
 ## Running the App
 
-## External Libraries
+The application can be run directly from Android Studio by clicking on the 'Run' button.
 
 ## Final Thoughts
+
+This project was a great opportunity to explore and implement modern Android development practices and libraries. It's a testament to the power and flexibility of these tools and how they can be used to build a simple, yet effective application. I look forward to receiving any feedback and making improvements.
+
+## Future Improvements
+
+- **Testing**: Implement screenshot testing to verify the UI remains consistent across different screen sizes and resolutions.
+
+- **Continuous Integration**: Set up a CI/CD pipeline to automate the build, test, and release process.
+
+- **Accessibility**: Ensure the app is accessible to all users by following best practices for accessibility.
+
+- **Localization**: Add support for multiple languages to reach a wider audience.

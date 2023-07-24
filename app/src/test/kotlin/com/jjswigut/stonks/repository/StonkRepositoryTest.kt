@@ -34,7 +34,7 @@ class StonkRepositoryTest {
             currency = "USD",
             currentPrice = "$3,181",
             quantity = null,
-            totalValue = "$0",
+            totalValue = null,
             lastUpdatedTime = "6:10 AM"
         )
         val response = stonkRepository.getStonks()

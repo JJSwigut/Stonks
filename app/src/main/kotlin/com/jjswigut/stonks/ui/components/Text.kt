@@ -1,4 +1,4 @@
-package com.jjswigut.stonks.ui.theme
+package com.jjswigut.stonks.ui.components
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text

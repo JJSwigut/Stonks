@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -26,7 +25,6 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -44,15 +42,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.window.Dialog
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.jjswigut.stonks.R
+import com.jjswigut.stonks.R.string
 import com.jjswigut.stonks.data.models.Stonk
 import com.jjswigut.stonks.data.network.ktor.StonkServiceError
 import com.jjswigut.stonks.feature.stonklist.StonkListViewModel.StonkListAction.RefreshStonks
 import com.jjswigut.stonks.feature.stonklist.StonkListViewModel.StonkListEffect
 import com.jjswigut.stonks.feature.stonklist.ui.StonkListEmptyContent
 import com.jjswigut.stonks.feature.stonklist.ui.StonkListItem
+import com.jjswigut.stonks.ui.components.ButtonText
 import com.jjswigut.stonks.ui.components.Loader
-import com.jjswigut.stonks.ui.theme.ButtonText
-import com.jjswigut.stonks.ui.theme.TitleText
+import com.jjswigut.stonks.ui.components.TitleText
 import com.jjswigut.stonks.ui.utils.collectAsEffect
 import com.jjswigut.stonks.ui.utils.isScrollingUp
 import org.koin.androidx.compose.koinViewModel
@@ -83,40 +82,38 @@ fun StonkListScreen(
 
     val state = viewModel.state.collectAsState().value
 
-    Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.surface) {
-        val listState = rememberLazyListState()
+    val listState = rememberLazyListState()
 
-        Scaffold(
-            content = {
-                Box(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(it)
-                        .padding(horizontal = dimensionResource(id = R.dimen.padding_default))
-                ) {
-                    StonkList(
-                        listState = listState,
-                        isLoading = state.isLoading,
-                        stonks = state.stonks
-                    )
-                    Loader(
-                        modifier = Modifier.align(Alignment.Center),
-                        isLoading = state.isLoading
-                    )
-                    ErrorDialog(
-                        error = error,
-                        onDismiss = { error = null }
-                    )
-                }
-            },
-            floatingActionButton = {
-                RefreshFAB(
-                    extended = listState.isScrollingUp(),
-                    onClick = { viewModel.setAction(RefreshStonks) }
+    Scaffold(
+        content = {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(it)
+                    .padding(horizontal = dimensionResource(id = R.dimen.padding_default))
+            ) {
+                StonkList(
+                    isLoading = state.isLoading,
+                    stonks = state.stonks,
+                    listState = listState
+                )
+                Loader(
+                    modifier = Modifier.align(Alignment.Center),
+                    isLoading = state.isLoading
+                )
+                ErrorDialog(
+                    error = error,
+                    onDismiss = { error = null }
                 )
             }
-        )
-    }
+        },
+        floatingActionButton = {
+            RefreshFAB(
+                extended = listState.isScrollingUp(),
+                onClick = { viewModel.setAction(RefreshStonks) }
+            )
+        }
+    )
 }
 
 @Composable
@@ -129,9 +126,6 @@ private fun ErrorDialog(
             onDismissRequest = onDismiss
         ) {
             Card(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .wrapContentHeight(),
                 shape = MaterialTheme.shapes.large,
                 elevation = CardDefaults.cardElevation(dimensionResource(id = R.dimen.dialog_elevation))
             ) {
@@ -152,7 +146,7 @@ private fun ErrorDialog(
                         onClick = onDismiss
                     ) {
                         ButtonText(
-                            text = stringResource(id = R.string.ok)
+                            text = stringResource(id = string.ok)
                         )
                     }
                 }
@@ -167,7 +161,7 @@ private fun StonkList(
     isLoading: Boolean,
     stonks: List<Stonk>
 ) {
-    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+    Box(contentAlignment = Alignment.Center) {
         if (stonks.isEmpty() && !isLoading) {
             StonkListEmptyContent(
                 modifier = Modifier.fillMaxSize()

@@ -6,6 +6,7 @@ import com.jjswigut.stonks.data.network.ktor.StonkServiceImpl
 import com.jjswigut.stonks.dispatchers.Dispatcher
 import com.jjswigut.stonks.dispatchers.DispatcherImpl
 import com.jjswigut.stonks.repository.StonkRepository
+import com.jjswigut.stonks.repository.StonkRepositoryImpl
 import io.ktor.client.engine.android.Android
 import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
@@ -29,8 +30,8 @@ private val networkingModule = module {
         )
     }
 
-    single {
-        StonkRepository(
+    single<StonkRepository> {
+        StonkRepositoryImpl(
             stonkService = get()
         )
     }

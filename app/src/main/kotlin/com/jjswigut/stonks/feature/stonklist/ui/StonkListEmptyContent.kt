@@ -10,10 +10,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import com.jjswigut.stonks.R
 import com.jjswigut.stonks.R.dimen
-import com.jjswigut.stonks.ui.theme.SubtitleText
-import com.jjswigut.stonks.ui.theme.TitleText
+import com.jjswigut.stonks.R.string
+import com.jjswigut.stonks.ui.components.SubtitleText
+import com.jjswigut.stonks.ui.components.TitleText
 
 @Preview
 @Composable
@@ -21,19 +21,19 @@ fun StonkListEmptyContent(
     modifier: Modifier = Modifier
 ) {
     Column(
-        modifier = Modifier,
+        modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         TitleText(
             text = stringResource(
-                id = R.string.stonk_list_empty_text
+                id = string.stonk_list_empty_text
             )
         )
         Spacer(modifier = Modifier.height(dimensionResource(id = dimen.padding_default)))
         SubtitleText(
             text = stringResource(
-                id = R.string.stonk_list_empty_text_instruction
+                id = string.stonk_list_empty_text_instruction
             )
         )
     }

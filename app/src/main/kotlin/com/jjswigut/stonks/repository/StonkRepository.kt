@@ -1,23 +1,15 @@
 package com.jjswigut.stonks.repository
 
 import com.jjswigut.stonks.data.models.Stonk
-import com.jjswigut.stonks.data.network.ktor.StonkService
 import com.jjswigut.stonks.data.network.ktor.StonkServiceError
-import com.jjswigut.stonks.data.network.response.toStonk
 import com.jjswigut.stonks.data.network.utils.Either
-import com.jjswigut.stonks.data.network.utils.processSuccess
 
 /**
- * A class responsible for managing and retrieving stonk information from the remote service.
+ * A repository interface for retrieving stock data.
  *
- * @param stonkService An instance of StonkService to retrieve stonk information.
+ * This provides an abstraction over the data layer, and can be implemented to provide data from
+ * various sources, such as network, cache, or database.
  */
-class StonkRepository(
-    private val stonkService: StonkService
-) {
-    suspend fun getStonks(): Either<List<Stonk>, StonkServiceError> {
-        return stonkService.getStonks().processSuccess { response ->
-            response.stocks.map { it.toStonk() }
-        }
-    }
+interface StonkRepository {
+    suspend fun getStonks(): Either<List<Stonk>, StonkServiceError>
 }

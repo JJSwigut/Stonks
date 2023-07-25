@@ -19,7 +19,7 @@ class StonkRepositoryTest {
 
     @Before
     fun setUp() {
-        stonkRepository = StonkRepository(
+        stonkRepository = StonkRepositoryImpl(
             stonkService = StonkServiceImpl(
                 client = StonkServiceClient(mockEngine)
             )

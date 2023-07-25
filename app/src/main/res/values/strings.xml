@@ -8,7 +8,7 @@
     <string name="stonk_item_shares">Shares</string>
     <string name="stonk_item_value">Value</string>
     <string name="stonk_item_last_updated">Last updated</string>
-    <string name="stonk_list_empty_text_instruction">Slap that refresh button to give it another go!</string>
+    <string name="stonk_list_empty_text_instruction">Smash that refresh button to give it another go!</string>
     <string name="ok">OK!</string>
     <plurals name="share_amount">
         <item quantity="one">%s share</item>

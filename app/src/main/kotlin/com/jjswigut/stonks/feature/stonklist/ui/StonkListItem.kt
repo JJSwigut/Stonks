@@ -14,24 +14,26 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import com.jjswigut.stonks.R
 import com.jjswigut.stonks.R.dimen
+import com.jjswigut.stonks.R.plurals
+import com.jjswigut.stonks.R.string
 import com.jjswigut.stonks.data.models.Stonk
-import com.jjswigut.stonks.ui.theme.NameText
-import com.jjswigut.stonks.ui.theme.PriceText
-import com.jjswigut.stonks.ui.theme.SubtitleText
-import com.jjswigut.stonks.ui.theme.TickerText
-import com.jjswigut.stonks.ui.theme.ValueText
+import com.jjswigut.stonks.ui.components.NameText
+import com.jjswigut.stonks.ui.components.PriceText
+import com.jjswigut.stonks.ui.components.SubtitleText
+import com.jjswigut.stonks.ui.components.TickerText
+import com.jjswigut.stonks.ui.components.ValueText
 
 @Composable
-fun StonkListItem(stonk: Stonk) {
+fun StonkListItem(
+    modifier: Modifier = Modifier,
+    stonk: Stonk
+) {
     Card(
-        modifier = Modifier
-            .fillMaxWidth()
+        modifier = modifier
     ) {
         Column(
             modifier = Modifier
-                .fillMaxWidth()
                 .padding(dimensionResource(id = dimen.padding_default_half))
         ) {
             Row(
@@ -54,7 +56,7 @@ fun StonkListItem(stonk: Stonk) {
                     ValueText(
                         modifier = Modifier.weight(1f),
                         text = pluralStringResource(
-                            id = R.plurals.share_amount,
+                            id = plurals.share_amount,
                             count = shareQuantity,
                             shareQuantity.toString()
                         ),
@@ -70,14 +72,14 @@ fun StonkListItem(stonk: Stonk) {
                 Column(
                     horizontalAlignment = Alignment.Start
                 ) {
-                    SubtitleText(text = stringResource(id = R.string.stonk_item_last_updated))
+                    SubtitleText(text = stringResource(id = string.stonk_item_last_updated))
                     ValueText(text = stonk.lastUpdatedTime)
                 }
                 stonk.totalValue?.let { value ->
                     Column(
                         horizontalAlignment = Alignment.End
                     ) {
-                        SubtitleText(text = stringResource(id = R.string.stonk_item_value))
+                        SubtitleText(text = stringResource(id = string.stonk_item_value))
                         ValueText(text = value)
                     }
                 }
@@ -88,7 +90,7 @@ fun StonkListItem(stonk: Stonk) {
 
 @Preview
 @Composable
-fun StonkItemPreview() {
+private fun StonkItemPreview() {
     StonkListItem(
         stonk = Stonk(
             ticker = "TSLA",

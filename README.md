@@ -33,7 +33,7 @@ The UI components are built using Jetpack Compose and are kept reactive with sta
 | <img src=https://github.com/JJSwigut/Stonks/assets/62301576/326f9046-b2e3-4cd7-9746-52f5d04e3c21 width=350> | <img src=https://github.com/JJSwigut/Stonks/assets/62301576/2ca37d16-8546-42f7-b8cc-0de464cbe960 width=350> | <img src=https://github.com/JJSwigut/Stonks/assets/62301576/81484f4e-262e-46ca-911a-aa13533c49e1 width=350> |
 
 ## Focus Areas
-My primary focus was on usibng a modern build setup and ensuring smooth data flow within the application. A significant portion of my effort went into maintaining high code quality, which is integral to the overall scalability, maintainability and reliability of the app. To this end, I employed a suite of my preferred tools designed specifically to enforce these quality standards. In the process of emphasizing these backend aspects, I chose to keep the UI straightforward and simple, allowing the core technical components to be the main highlight of this project.
+My primary focus was on using a modern build setup and ensuring smooth data flow within the application. A significant portion of my effort went into maintaining high code quality, which is integral to the overall scalability, maintainability and reliability of the app. To this end, I employed a suite of my preferred tools designed specifically to enforce these quality standards. In the process of emphasizing these backend aspects, I chose to keep the UI straightforward and simple, allowing the core technical components to be the main highlight of this project.
 
 ## Tradeoffs
 

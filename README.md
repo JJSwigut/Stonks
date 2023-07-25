@@ -1,6 +1,6 @@
 # Stonks
 
-Stonks is a simple, yet effective Android application that provides users with a list of stocks and their current prices. The application is built with a focus on modern Android development practices and libraries.
+Stonks is a simple, yet effective Android application that provides users with a list of stonks and their current prices. The application is built with a focus on modern Android development practices and libraries.
 
 ## Libraries Used
 
@@ -46,7 +46,7 @@ The application can be run directly from Android Studio by clicking on the 'Run'
 
 ## Final Thoughts
 
-This project was a great opportunity to explore and implement modern Android development practices and libraries. It's a testament to the power and flexibility of these tools and how they can be used to build a simple, yet effective application. I look forward to receiving any feedback and making improvements.
+This project was a great opportunity to explore and implement modern Android development practices and libraries. I spent about 4.5-5 hours on the project all up, including documentation. The only copied code was called out in comments but mostly taken from the NowInAndroid project as inspiration for the ConventionPlugins and build-logic module.
 
 ## Future Improvements
 

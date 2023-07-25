@@ -1,7 +1,7 @@
 import com.diffplug.gradle.spotless.SpotlessExtension
+import io.gitlab.arturbosch.detekt.extensions.DetektExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import io.gitlab.arturbosch.detekt.extensions.DetektExtension
 import org.gradle.kotlin.dsl.configure
 
 class QualityConventionPlugin : Plugin<Project> {

@@ -33,6 +33,10 @@ internal fun Project.configureAndroidCompose(
     }
 }
 
+/**
+ * Taken from NowInAndroid, this function configures the Compose compiler to generate reports in
+ * the build folder that can help diagnose performance and stability issues within compose.
+ */
 private fun Project.buildComposeMetricsParameters(): List<String> {
     val metricParameters = mutableListOf<String>()
     val enableMetricsProvider = project.providers.gradleProperty("enableComposeCompilerMetrics")
